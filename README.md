@@ -348,7 +348,7 @@ export const projects: Project[] = [
 
 
 
-src/data/education.ts / src/data/experience.ts
+- src/data/education.ts / src/data/experience.ts
 
 Même principe : tableaux d’objets décrivant ton parcours.
 
@@ -356,7 +356,7 @@ Même principe : tableaux d’objets décrivant ton parcours.
 
 Chaque page lit les données et les affiche.
 
-src/pages/Home.tsx
+- src/pages/Home.tsx
 
 
 
@@ -393,10 +393,12 @@ Affiche les expériences (stages, projets associatifs, etc.) :
 
 ```texttitre, organisation, dates, description, mots-clés.```
 
-src/pages/Education.tsx
+- src/pages/Education.tsx
 
 Affiche les formations en timeline :
 
+
+```text
 Bac (année, mention, lycée)
 
 1re année FST MIPC
@@ -404,43 +406,63 @@ Bac (année, mention, lycée)
 Licence Informatique ENS Cadi Ayyad
 
 Master Informatique ENS Cadi Ayyad
+```
 
-src/pages/Certifications.tsx
+
+
+- src/pages/Certifications.tsx
 
 Page avec :
 
+
+
+```text
 Champ de filtre (par texte/tag)
 
 Grille de cartes de certification (CertificationCard)
 
 Chaque carte peut ouvrir une image agrandie du certificat dans un modal
+```
 
-src/pages/Contact.tsx
+
+
+- src/pages/Contact.tsx
 
 Affiche les infos :
 
+
+```text
 Nom complet
 
 Email cliquable (mailto:)
 
 Téléphone (optionnel)
+```
 
-éventuellement un formulaire plus tard
 
-6.6 Composant CertificationCard + modal
+**6.6 Composant CertificationCard + modal**
 
-src/components/CertificationCard.tsx :
+- src/components/CertificationCard.tsx :
 
+
+```text
 Affiche l’image du badge (/certs/*.webp) en petit
 
 Affiche titre, organisme, date, compétences
 
 Bouton “Voir le certificat” → ouvre une version agrandie du certificat dans un overlay sur la même page (pas une nouvelle page)
+```
 
-6.7 Dark Mode (ThemeToggle)
 
-src/components/ThemeToggle.tsx :
 
+
+**6.7 Dark Mode (ThemeToggle)**
+
+- src/components/ThemeToggle.tsx :
+
+
+
+```text
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
@@ -466,26 +488,31 @@ export default function ThemeToggle() {
     </button>
   );
 }
+```
+
+- Enregistre le thème dans localStorage
+
+- Applique la classe dark sur <html>
+
+- Tailwind applique alors les classes dark:bg-..., dark:text-... dans RootLayout et index.css.
+
+**6.8 JSON-LD (Knowledge Graph) pour le SEO**
 
 
-Enregistre le thème dans localStorage
 
-Applique la classe dark sur <html>
+**Dans Home.tsx, on a ajouté :**
 
-Tailwind applique alors les classes dark:bg-..., dark:text-... dans RootLayout et index.css.
 
-6.8 JSON-LD (Knowledge Graph) pour le SEO
 
-Dans Home.tsx, on a ajouté :
 
-Import des données education et certifications
+- Import des données education et certifications
 
-Deux objets eduLd et certLd
 
-Deux <script type="application/ld+json"> dans <Helmet>
 
-Extrait (déjà fourni complet dans la conversation) :
+- Deux <script type="application/ld+json"> dans <Helmet>
 
+
+```text
 <Helmet>
   <title>{profile.name} — Portfolio</title>
   <meta
@@ -495,90 +522,294 @@ Extrait (déjà fourni complet dans la conversation) :
   <script type="application/ld+json">{JSON.stringify(eduLd)}</script>
   <script type="application/ld+json">{JSON.stringify(certLd)}</script>
 </Helmet>
+```
 
 
-Résultat :
 
-Les moteurs de recherche comprennent :
 
-Dans quelles universités / écoles tu as étudié
+**Résultat :**
 
-Quelles certifications officielles tu possèdes
 
-7. Comment modifier le contenu
-7.1 Modifier tes projets
 
-Fichier : src/data/projects.ts
+**Les moteurs de recherche comprennent :**
 
-Ajouter / supprimer / modifier un objet dans projects.
+- Dans quelles universités / écoles tu as étudié
 
-La page Projets se met automatiquement à jour.
+- Quelles certifications officielles tu possèdes
 
-7.2 Modifier les expériences
+## 7. Comment modifier le contenu
 
-Fichier : src/data/experience.ts
 
-Ajuster les dates, lieux, missions, technologies.
+**7.1 Modifier tes projets**
 
-La page Parcours lit ces données.
+- Fichier : src/data/projects.ts
 
-7.3 Modifier les formations
+- Ajouter / supprimer / modifier un objet dans projects.
 
-Fichier : src/data/education.ts
+- La page Projets se met automatiquement à jour.
 
-Ajouter le Bac, année FST, Licence ENS, Master ENS, etc.
+**7.2 Modifier les expériences**
 
-La page Formations affiche la timeline.
+- Fichier : src/data/experience.ts
 
-7.4 Modifier les certifications
+- Ajuster les dates, lieux, missions, technologies.
 
-Fichier : src/data/certifications.ts
+- La page Parcours lit ces données.
 
-Mettre à jour title, issuer, issueDate, skills, tags, image, credentialUrl, etc.
+**7.3 Modifier les formations**
 
-Mettre les images dans public/certs/*.webp
 
-7.5 Modifier la couleur générale
 
-Le beige global est défini dans tailwind.config.js et utilisé dans index.css / RootLayout.tsx :
+- Fichier : src/data/education.ts
 
+- Ajouter le Bac, année FST, Licence ENS, Master ENS, etc.
+
+- La page Formations affiche la timeline.
+
+**7.4 Modifier les certifications**
+
+- Fichier : src/data/certifications.ts
+
+- Mettre à jour title, issuer, issueDate, skills, tags, image, credentialUrl, etc.
+
+- Mettre les images dans public/certs/*.webp
+
+**7.5 Modifier la couleur générale**
+
+- Le beige global est défini dans tailwind.config.js et utilisé dans index.css / RootLayout.tsx :
+
+
+```text
 colors: {
   "kaoutar-beige": "#f6efe5",
 },
+```
 
 
-Tu peux changer ce code hexadécimal pour ajuster la teinte.
 
-8. Commandes utiles
+## 8. Commandes utiles
 
-Formatage automatique du code :
+- Formatage automatique du code :
 
+
+```text
 npm run format
+```
+
+- Linting TypeScript/React :
 
 
-Linting TypeScript/React :
-
+```text
 npm run lint
+```
 
 
-Dev server :
 
+-Dev server :
+
+
+```text
 npm run dev
+```
 
 
-Build production :
 
+
+-Build production :
+
+
+
+```text
 npm run build
 npm run preview
+```
 
-9. Idées d’améliorations futures
 
-Ajouter un vrai formulaire Contact connecté à Formspree ou une API.
+## Déploiement d’un projet Vite sur Vercel
 
-Ajouter des animations (Framer Motion).
+- Testez le build local :
 
-Ajouter un switch de langue (FR / EN).
 
-Intégrer un suivi d’audience (Plausible, Umami ou Google Analytics).
 
-Export en PDF d’un CV généré à partir des mêmes données (src/data/*).
+```text
+npm run build
+```
+
+**2. Créer un compte Vercel (ou se connecter)**
+
+1. Aller sur : https://vercel.com
+
+2. Se connecter via GitHub (recommandé).
+
+3. Autoriser Vercel à accéder à vos dépôts GitHub.
+
+**3. Créer un nouveau projet sur Vercel**
+
+
+A. Sur la page d’accueil de Vercel, cliquez sur New Project :
+
+
+https://vercel.com/new
+
+2. Sélectionnez le repository GitHub contenant votre projet.
+
+3. Cliquez sur Import.
+
+**4. Configuration du framework**
+
+
+| Option               | Valeur              |
+| -------------------- | ------------------- |
+| **Framework**        | Vite (auto-détecté) |
+| **Build Command**    | `npm run build`     |
+| **Output Directory** | `dist`              |
+
+
+
+**Vercel détecte automatiquement Vite.**
+
+- Configuration recommandée :
+
+- Option	Valeur
+- Framework	Vite (auto-détecté)
+- Build Command	npm run build
+- Output Directory	dist
+
+**Si ce n’est pas détecté automatiquement, configurez :**
+
+
+
+```text
+Build Command: npm run build
+Output Directory: dist
+```
+
+
+ **5. Lancer le déploiement**
+
+1. Cliquez sur Deploy.
+
+2. Vercel va :
+
+3. installer les dépendances (npm install)
+
+4. exécuter le build (npm run build)
+
+5. héberger les fichiers du dossier dist
+
+**À la fin du déploiement, vous obtiendrez une URL :**
+
+
+
+https://nom-du-projet.vercel.app
+
+
+## Votre site est maintenant en ligne 
+
+**6. Vérifier que l’application SPA fonctionne**
+
+**Pour un projet Vite, les routes d’une SPA doivent fonctionner :**
+
+- Testez les liens internes (/about, /projects, etc.)
+
+- Rechargez une page directement depuis l’URL pour vérifier que Vercel redirige bien vers index.html
+
+
+
+
+
+ **7. Ajouter un domaine personnalisé (optionnel)**
+
+1. Ouvrir votre projet dans Vercel.
+
+2. Aller dans :
+
+
+```text
+Settings → Domains
+```
+
+3. Cliquez sur Add Domain.
+
+4. Entrez votre domaine (ex : mon-portfolio.com)
+
+5. Suivez les instructions DNS (A ou CNAME) chez votre fournisseur de domaine (OVH, Namecheap, etc.)
+
+6. Une fois la configuration propagée, votre site sera accessible sur :
+
+https://mon-portfolio.com
+
+**8. Déploiement automatique**
+
+- À chaque commit sur GitHub :
+
+- Vercel reconstruit votre projet
+
+- Déploie automatiquement la nouvelle version
+
+
+
+**9. Commandes utiles**
+
+
+- Installer les dépendances
+
+```text
+npm install
+```
+
+
+- Lancer le serveur local
+
+
+```text
+npm run dev
+```
+
+
+
+- Construire avant déploiement
+
+
+```text
+npm run build
+```
+
+
+
+**10. Résumé des étapes**
+
+1. Préparer le projet Vite
+
+2. Se connecter sur Vercel
+
+3. Importer le repo GitHub
+
+4. Choisir Framework : Vite
+
+5. Build Command : npm run build
+
+6. Output Directory : dist
+
+7. Déployez
+
+8. Obtenir l’URL publique :
+
+https://portfolio-aitlbiz-kaoutar-a65c.vercel.app/
+
+9. Ajouter un domaine personnalisé
+
+## Description Vidéo :
+
+
+
+
+
+
+https://github.com/user-attachments/assets/3e8a1c48-8bcd-4dfa-96b5-e3dc2d012916
+
+
+
+
+
+
