@@ -5,6 +5,12 @@ export type Experience = {
   location?: string;
   description: string[];
   tags: string[];
+
+  // ✅ Ajouts pour correspondre à ce que Experience.tsx utilise
+  start?: string;   // ex: "2024-03"
+  end?: string;     // ex: "2024-07"
+  tasks?: string[]; // utilisé dans exp.tasks
+  skills?: string[]; // utilisé dans exp.skills
 };
 
 export const experiences: Experience[] = [
@@ -19,7 +25,18 @@ export const experiences: Experience[] = [
       "Création d’une interface web avec templates Django",
       "Mise en place d’un tableau de bord pour l'administration"
     ],
-    tags: ["Python", "Django", "OpenCV", "HTML/CSS"]
+    tags: ["Python", "Django", "OpenCV", "HTML/CSS"],
+
+    // ✅ champs ajoutés pour Experience.tsx
+    start: "2024-03",
+    end: "2024-07",
+    tasks: [
+      "Développement d’une plateforme de gestion d’absences avec reconnaissance faciale",
+      "Utilisation de Python, OpenCV et Django pour la détection et l’identification des visages",
+      "Création d’une interface web avec templates Django",
+      "Mise en place d’un tableau de bord pour l'administration"
+    ],
+    skills: ["Python", "Django", "OpenCV", "HTML/CSS"]
   },
 
   {
@@ -33,7 +50,18 @@ export const experiences: Experience[] = [
       "Gestion des réservations, utilisateurs et voitures",
       "Base de données MySQL"
     ],
-    tags: ["Java", "JSP", "Servlet", "MySQL", "MVC"]
+    tags: ["Java", "JSP", "Servlet", "MySQL", "MVC"],
+
+    // ✅ champs ajoutés pour Experience.tsx
+    start: "2023-09",
+    end: "2024-01",
+    tasks: [
+      "Développement d’un site complet de location de voitures",
+      "Architecture MVC avec Java (JSP, Servlets, JDBC)",
+      "Gestion des réservations, utilisateurs et voitures",
+      "Base de données MySQL"
+    ],
+    skills: ["Java", "JSP", "Servlet", "MySQL", "MVC"]
   },
 
   {
@@ -47,6 +75,17 @@ export const experiences: Experience[] = [
       "Gestion des profils utilisateurs et synchronisation des données",
       "Tests, débogage et optimisation de l’application"
     ],
-    tags: ["Android", "Kotlin", "Firebase"]
+    tags: ["Android", "Kotlin", "Firebase"],
+
+    // ✅ champs ajoutés pour Experience.tsx
+    start: "2023-07",
+    end: "2023-09",
+    tasks: [
+      "Développement d’une application mobile Android (Kotlin)",
+      "Intégration Firebase Authentication & Cloud Firestore",
+      "Gestion des profils utilisateurs et synchronisation des données",
+      "Tests, débogage et optimisation de l’application"
+    ],
+    skills: ["Android", "Kotlin", "Firebase"]
   }
 ];
