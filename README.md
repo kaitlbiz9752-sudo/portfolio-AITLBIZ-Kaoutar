@@ -810,13 +810,6 @@ npm run build
 
 7. Déployez
 
-8. Obtenir l’URL publique :
-
-https://portfolio-aitlbiz-kaoutar-a65c.vercel.app/
-
-9. Ajouter un domaine personnalisé
-
-## Description Vidéo :
 
 
 
@@ -831,6 +824,7 @@ https://portfolio-aitlbiz-kaoutar-a65c.vercel.app/
 
 
 
-https://github.com/user-attachments/assets/93aabe44-1015-4a17-b268-7dc3bf2e341b
+
+
 
 
