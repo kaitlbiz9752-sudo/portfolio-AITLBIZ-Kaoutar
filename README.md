@@ -1,5 +1,22 @@
 # Portfolio – AITLBIZ Kaoutar
 
+ **l’URL publique via vercel**
+
+https://portfolio-aitlbiz-kaoutar-a65c.vercel.app/
+
+
+
+## Description Vidéo :
+
+
+
+
+
+https://github.com/user-attachments/assets/93aabe44-1015-4a17-b268-7dc3bf2e341b
+
+
+
+
 Portfolio personnel développé avec **React + TypeScript + Vite** et **Tailwind CSS v4**, pour présenter :
 
 - Profil (photo, titre, localisation, mots-clés)
