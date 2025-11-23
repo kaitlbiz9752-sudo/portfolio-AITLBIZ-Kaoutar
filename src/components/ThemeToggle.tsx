@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   // État du thème (false = clair, true = sombre)
@@ -25,18 +26,22 @@ export default function ThemeToggle() {
   }, [isDark]);
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={() => setIsDark((v) => !v)}
-      className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm bg-white/70 hover:bg-white dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-50"
+      className="inline-flex items-center gap-2 rounded-full border-2 border-border px-4 py-2 text-sm bg-background hover:bg-primary/10 transition-all duration-300"
       aria-label="Basculer le thème clair/sombre"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
-      {/* petit rond pour l’icône (facultatif) */}
-      <span
-        className="inline-block h-3 w-3 rounded-full bg-amber-400 dark:bg-zinc-100"
+      {/* petit rond pour l'icône (facultatif) */}
+      <motion.span
+        className="inline-block h-3 w-3 rounded-full bg-primary"
         aria-hidden="true"
+        animate={{ rotate: isDark ? 180 : 0 }}
+        transition={{ duration: 0.3 }}
       />
       <span>{isDark ? "Dark" : "Light"}</span>
-    </button>
+    </motion.button>
   );
 }

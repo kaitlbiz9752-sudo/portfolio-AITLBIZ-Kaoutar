@@ -56,13 +56,32 @@ export const certifications: Certification[] = [
       "https://mliaedu.toubkalit.com/verify-certificate/36-4849f83c-de56-4927-9783-2c053949d27f-744865"
   },
 
-  {
-    title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
-    issuer: "Microsoft",
-    issueDate: "2023-11",
-    skills: ["Azure", "Cloud Fundamentals"],
-    tags: ["Azure", "Cloud", "AZ-900"],
-    image: "/certs/azure-az900.webp",
-    imageAlt: "Certificat AZ-900"
-  }
+ {
+   title:
+     "Certification Professionnelle en Développement Front-End moderne avec React",
+   issuer: "MLIAEdu — Plateforme de Certification Professionnelle",
+   issueDate: "2025-11",
+   skills: [
+     "JavaScript (ES6+)",
+     "React.js",
+     "Hooks (useState, useEffect, useMemo...)",
+     "Routing avec React Router",
+     "Gestion d’état",
+     "Composants réutilisables",
+     "Consommation d’API REST",
+     "Tailwind CSS",
+     "Optimisation des performances"
+   ],
+   tags: ["React", "JavaScript", "Front-End", "Web"],
+   image: "/certs/aws-saa-kaoutar.webp",
+   imageAlt: "Certificat Développement Front-End React — Kaoutar Aitlbiz",
+   highlights: [
+     "Score obtenu : 97%",
+     "Progression des labs : 100%",
+     "Certification délivrée le 23 novembre 2025"
+   ],
+   credentialUrl:
+     "https://mliaedu.toubkalit.com/verify-certificate/26-4849f83c-de56-4927-9783-2c053949d27f-371621"
+ },
+
 ];
