@@ -26,7 +26,7 @@ const itemVariants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      // ❌ ease supprimé pour corriger l’erreur Vercel
     },
   },
 };
@@ -63,18 +63,22 @@ export default function ExperiencePage() {
             whileHover={{ x: 8 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Timeline dot */}
+            {/* Point de la timeline */}
             <motion.span
               className="absolute -left-[34px] top-2 h-4 w-4 rounded-full bg-primary border-4 border-background shadow-lg"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: index * 0.15 + 0.4, type: "spring", stiffness: 200 }}
+              transition={{
+                delay: index * 0.15 + 0.4,
+                type: "spring",
+                stiffness: 200,
+              }}
             />
-            
-            {/* Content card */}
+
+            {/* Carte */}
             <div className="relative border-2 border-border rounded-xl p-6 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              
+
               <div className="relative z-10">
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">
                   {exp.title}

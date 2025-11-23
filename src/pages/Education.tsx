@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 
 function fmt(date?: string) {
   if (!date) return "Présent";
-  // si c'est juste une année ("2020")
   if (!date.includes("-")) return date;
   const [y, m] = date.split("-");
-  return `${m}/${y}`; // 09/2023
+  return `${m}/${y}`;
 }
 
 const containerVariants = {
@@ -28,7 +27,7 @@ const itemVariants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      // ❌ ease supprimé car incompatible TypeScript
     },
   },
 };
@@ -70,13 +69,17 @@ export default function EducationPage() {
               className="absolute -left-[34px] top-2 h-4 w-4 rounded-full bg-primary border-4 border-background shadow-lg"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: index * 0.15 + 0.4, type: "spring", stiffness: 200 }}
+              transition={{
+                delay: index * 0.15 + 0.4,
+                type: "spring",
+                stiffness: 200,
+              }}
             />
-            
+
             {/* Content card */}
             <div className="relative border-2 border-border rounded-xl p-6 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              
+
               <div className="relative z-10">
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors duration-300">
                   {e.title}
@@ -97,7 +100,9 @@ export default function EducationPage() {
                         className="text-muted-foreground"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.15 + 0.6 + i * 0.1 }}
+                        transition={{
+                          delay: index * 0.15 + 0.6 + i * 0.1,
+                        }}
                       >
                         {d}
                       </motion.li>

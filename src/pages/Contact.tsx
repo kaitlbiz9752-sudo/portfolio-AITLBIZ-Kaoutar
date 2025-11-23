@@ -22,8 +22,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: "easeOut",
+      duration: 0.6, // ⬅️ ease supprimé pour corriger TypeScript
     },
   },
 };
@@ -50,6 +49,7 @@ export default function Contact() {
       >
         Contact
       </motion.h1>
+
       <motion.p
         className="text-muted-foreground text-lg"
         variants={itemVariants}
@@ -99,22 +99,12 @@ export default function Contact() {
       </motion.div>
 
       {/* Formulaire de contact */}
-      <motion.div
-        className="max-w-xl"
-        variants={itemVariants}
-      >
+      <motion.div className="max-w-xl" variants={itemVariants}>
         <h2 className="text-xl font-semibold mb-4">
           M&apos;envoyer un message
         </h2>
-        <form
-          action={FORM_ENDPOINT}
-          method="POST"
-          className="grid gap-5"
-        >
-          <motion.div
-            className="grid gap-2"
-            variants={itemVariants}
-          >
+        <form action={FORM_ENDPOINT} method="POST" className="grid gap-5">
+          <motion.div className="grid gap-2" variants={itemVariants}>
             <label htmlFor="name" className="text-sm font-medium">
               Nom complet
             </label>
@@ -129,10 +119,7 @@ export default function Contact() {
             />
           </motion.div>
 
-          <motion.div
-            className="grid gap-2"
-            variants={itemVariants}
-          >
+          <motion.div className="grid gap-2" variants={itemVariants}>
             <label htmlFor="email" className="text-sm font-medium">
               Adresse email
             </label>
@@ -147,10 +134,7 @@ export default function Contact() {
             />
           </motion.div>
 
-          <motion.div
-            className="grid gap-2"
-            variants={itemVariants}
-          >
+          <motion.div className="grid gap-2" variants={itemVariants}>
             <label htmlFor="subject" className="text-sm font-medium">
               Sujet
             </label>
@@ -164,10 +148,7 @@ export default function Contact() {
             />
           </motion.div>
 
-          <motion.div
-            className="grid gap-2"
-            variants={itemVariants}
-          >
+          <motion.div className="grid gap-2" variants={itemVariants}>
             <label htmlFor="message" className="text-sm font-medium">
               Message
             </label>

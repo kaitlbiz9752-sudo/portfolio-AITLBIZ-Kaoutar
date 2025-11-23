@@ -22,7 +22,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      // ease supprimé pour éviter l'erreur TS / Vercel
     },
   },
 };
@@ -35,7 +35,7 @@ const imageVariants = {
     x: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      // ease supprimé
     },
   },
 };
@@ -48,7 +48,7 @@ const techVariants = {
     transition: {
       delay: i * 0.05,
       duration: 0.4,
-      ease: "easeOut",
+      // ease supprimé
     },
   }),
 };
@@ -136,7 +136,7 @@ export default function Home() {
           className="mt-6 text-sm text-muted-foreground"
           variants={itemVariants}
         >
-          Retrouvez l'ensemble de mes projets sur mon GitHub :{" "}
+          Retrouvez l&apos;ensemble de mes projets sur mon GitHub :{" "}
           <a
             href="https://github.com/kaitlbiz9752-sudo"
             target="_blank"
@@ -162,7 +162,9 @@ export default function Home() {
           className="mt-8"
           variants={itemVariants}
         >
-          <h3 className="text-lg font-semibold mb-4">Technologies & Outils</h3>
+          <h3 className="text-lg font-semibold mb-4">
+            Technologies &amp; Outils
+          </h3>
 
           <div className="flex flex-wrap gap-2 text-sm">
             {technologies.map((tech, i) => (

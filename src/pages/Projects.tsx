@@ -22,8 +22,7 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+      duration: 0.5, // ease retiré car incompatible TS/Vercel
     },
   },
 };
@@ -62,7 +61,7 @@ export default function Projects() {
           >
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <div className="relative z-10">
               <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300">
                 {p.title}
@@ -97,7 +96,7 @@ export default function Projects() {
                     href={p.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 hover:underline-offset-2 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-all duration-300"
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -110,7 +109,7 @@ export default function Projects() {
                     href={p.repo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 hover:underline-offset-2 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-all duration-300"
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
                   >
