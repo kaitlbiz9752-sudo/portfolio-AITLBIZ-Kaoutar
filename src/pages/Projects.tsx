@@ -11,6 +11,7 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.2,
+      // ease supprimé
     },
   },
 };
@@ -22,7 +23,8 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.5, // ease retiré car incompatible TS/Vercel
+      duration: 0.5,
+      // ease supprimé
     },
   },
 };
@@ -51,7 +53,7 @@ export default function Projects() {
       </motion.h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p, index) => (
+        {projects.map((p) => (
           <motion.article
             key={p.title}
             variants={cardVariants}
@@ -59,7 +61,6 @@ export default function Projects() {
             transition={{ duration: 0.3 }}
             className="group relative border-2 border-border rounded-2xl p-6 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-xl hover:border-primary/30 overflow-hidden"
           >
-            {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             <div className="relative z-10">
@@ -96,7 +97,7 @@ export default function Projects() {
                     href={p.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 hover:underline-offset-2 transition-all duration-300"
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -109,7 +110,7 @@ export default function Projects() {
                     href={p.repo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium underline underline-offset-4 hover:underline-offset-2 transition-all duration-300"
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.95 }}
                   >
