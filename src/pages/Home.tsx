@@ -10,7 +10,7 @@ export default function Home() {
         <title>{profile.name} — Portfolio</title>
         <meta
           name="description"
-          content="Portfolio professionnel : IA, SIG, DevSecOps, Android, projets et certifications."
+          content="Portfolio d'AITLBIZ Kaoutar, ingénieure en informatique : développement web et mobile, projets et formations."
         />
       </Helmet>
 
@@ -24,6 +24,7 @@ export default function Home() {
 
         <p className="mt-4 text-muted-foreground">{profile.about}</p>
 
+        {/* Liens navigation */}
         <div className="mt-6 flex gap-3">
           <Link to="/projects" className="underline">
             Voir les projets
@@ -33,11 +34,24 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Lien GitHub ajouté */}
+        <p className="mt-4 text-sm">
+          Retrouvez l’ensemble de mes projets sur mon GitHub :{" "}
+          <a
+            href="https://github.com/kaitlbiz9752-sudo"
+            target="_blank"
+            rel="noreferrer"
+            className="underline font-medium"
+          >
+            github.com/kaitlbiz9752-sudo
+          </a>
+        </p>
+
+        {/* Badges */}
         <div className="mt-6 flex flex-wrap gap-2 text-sm">
           <span className="rounded-full border px-3 py-1">
             Master IA (2025)
           </span>
-          <span className="rounded-full border px-3 py-1">AWS SAA</span>
         </div>
       </div>
 

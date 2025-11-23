@@ -1,3 +1,5 @@
+// src/data/projects.ts
+
 export type Project = {
   title: string;
   period?: string;
@@ -10,38 +12,27 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Gestion d'absence avec reconnaissance faciale",
-    period: "2024",
-    tags: ["Python", "Django", "OpenCV", "Reconnaissance faciale"],
-    summary:
-      "Application web permettant de gérer les présences et absences des étudiants à partir de la reconnaissance faciale. "
-      + "Les visages sont enregistrés, puis détectés automatiquement via OpenCV. "
-      + "Les absences sont calculées et consultables par l’administration.",
-    // link: "https://demo-absence.example.com",
-    // repo: "https://github.com/kaoutar/gestion-absence-opencv",
-  },
-
-  {
-    title: "Site de location de voitures",
+    title: "Site de location de voitures (Java / Thymeleaf)",
     period: "2023",
-    tags: ["Java", "JSP/Servlets", "JDBC", "MVC"],
+    tags: ["Java", "Spring Boot", "Thymeleaf", "MySQL"],
     summary:
-      "Site web de location de voitures développé en Java. "
-      + "Le client peut rechercher un véhicule par catégorie, période et ville, puis effectuer une réservation en ligne. "
-      + "Un espace administrateur permet de gérer le parc de véhicules, les réservations et les clients.",
-    // link: "https://location-voiture.example.com",
-    // repo: "https://github.com/kaoutar/site-location-voiture",
+      "Application web de location de voitures développée avec Java, Spring Boot et Thymeleaf. Les clients peuvent rechercher un véhicule par catégorie, ville et période, puis effectuer une réservation en ligne. Un espace administrateur permet de gérer le parc de véhicules, les réservations et les clients.",
+    repo: "https://github.com/kaitlbiz9752-sudo/Mini_Projet_Location_Voitures",
   },
-
   {
-    title: "Application mobile Android",
+    title: "Application Android – Formulaire et navigation",
     period: "2022",
-    tags: ["Android Studio", "Kotlin", "Firebase"],
+    tags: ["Android Studio", "Java", "Navigation", "Formulaire"],
     summary:
-      "Application mobile Android réalisée avec Android Studio et Kotlin. "
-      + "Elle permet à l’utilisateur de créer un compte, de se connecter et de gérer ses données (ex. tâches, notes ou suivi d’activité). "
-      + "Les données sont synchronisées dans le cloud via Firebase pour être accessibles depuis plusieurs appareils.",
-    // link: "https://play.google.com/…",
-    // repo: "https://github.com/kaoutar/app-android",
+      "Application Android réalisée avec Android Studio. Elle contient plusieurs écrans reliés par un système de navigation, avec des formulaires pour saisir et afficher des informations. Le projet montre la gestion des intents, du cycle de vie d’une activité et de la validation de formulaires.",
+    repo: "https://github.com/kaitlbiz9752-sudo/-TP3.Formulaire_navigation_activit-s",
+  },
+  {
+    title: "Application Android – AppPizza",
+    period: "2022",
+    tags: ["Android Studio", "Java", "Commande", "Interface utilisateur"],
+    summary:
+      "Application mobile Android permettant de commander des pizzas. L’utilisateur choisit la taille, les ingrédients et la quantité, puis obtient un récapitulatif de sa commande. Le projet met l’accent sur la conception d’une interface conviviale et le passage de données entre écrans.",
+    repo: "https://github.com/kaitlbiz9752-sudo/AppPizza",
   },
 ];

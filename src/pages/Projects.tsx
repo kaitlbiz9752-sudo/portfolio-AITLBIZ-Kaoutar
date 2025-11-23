@@ -1,3 +1,5 @@
+// src/pages/Projects.tsx
+
 import { projects } from "@/data/projects";
 import { Helmet } from "react-helmet-async";
 
@@ -8,7 +10,7 @@ export default function Projects() {
         <title>Projets — Portfolio</title>
         <meta
           name="description"
-          content="Liste des projets : applications web, IA, SIG, DevSecOps."
+          content="Liste des projets : applications web Java / Thymeleaf et applications mobiles Android."
         />
       </Helmet>
 
@@ -21,11 +23,23 @@ export default function Projects() {
             className="border rounded-2xl p-4 hover:shadow"
           >
             <h3 className="font-semibold">{p.title}</h3>
-            <p className="text-sm text-muted-foreground">{p.summary}</p>
+
+            {p.period && (
+              <p className="text-xs text-muted-foreground mt-1">
+                {p.period}
+              </p>
+            )}
+
+            <p className="mt-2 text-sm text-muted-foreground">
+              {p.summary}
+            </p>
 
             <div className="mt-3 flex flex-wrap gap-2 text-xs">
               {p.tags.map((t) => (
-                <span key={t} className="border rounded px-2 py-0.5">
+                <span
+                  key={t}
+                  className="border rounded px-2 py-0.5"
+                >
                   {t}
                 </span>
               ))}

@@ -28,14 +28,14 @@ export default function CertificationsPage() {
           <title>Certifications — Portfolio</title>
           <meta
             name="description"
-            content="Certifications professionnelles : AWS, Kubernetes, Cloud, DevOps."
+            content="Certifications professionnelles : IA, Java, Cloud, et plus."
           />
         </Helmet>
 
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-2xl font-semibold">Certifications</h2>
           <input
-            placeholder="Filtrer (ex: AWS, Kubernetes)"
+            placeholder="Filtrer (ex: NLP, Java, Azure)"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="border rounded-xl px-3 py-2 w-72"
@@ -54,7 +54,7 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      {/* Popup / Lightbox */}
+      {/* Popup / Lightbox pour voir le certificat en grand */}
       {selected && selected.image && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
@@ -62,7 +62,7 @@ export default function CertificationsPage() {
         >
           <div
             className="bg-white rounded-2xl p-4 max-w-3xl w-[90%] max-h-[90vh] flex flex-col gap-3"
-            onClick={(e) => e.stopPropagation()} // pour ne pas fermer en cliquant sur l'image
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center">
               <h3 className="font-semibold text-lg">
@@ -82,6 +82,17 @@ export default function CertificationsPage() {
               alt={selected.imageAlt ?? selected.title}
               className="mx-auto max-h-[70vh] w-auto object-contain"
             />
+
+            {selected.credentialUrl && (
+              <a
+                href={selected.credentialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 text-sm underline self-start"
+              >
+                Vérifier ce certificat
+              </a>
+            )}
           </div>
         </div>
       )}

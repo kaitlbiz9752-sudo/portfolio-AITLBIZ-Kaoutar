@@ -8,8 +8,8 @@ export type Certification = {
   image?: string;
   imageAlt?: string;
   status?: "valid" | "expired" | "revoked";
-  credentialUrl?: string;
-  highlights?: string[]; // ✅ ajout pour corriger l'erreur TS
+  credentialUrl?: string;   // lien de vérification
+  highlights?: string[];
 };
 
 export const certifications: Certification[] = [
@@ -27,11 +27,14 @@ export const certifications: Certification[] = [
     ],
     tags: ["Hibernate", "JPA", "Java", "Backend"],
     image: "/certs/cka-kaoutar.webp",
-    imageAlt: "Certificat MLIAEdu Hibernate & JPA — Kaoutar Aitlbiz"
+    imageAlt: "Certificat MLIAEdu Hibernate & JPA — Kaoutar Aitlbiz",
+    credentialUrl:
+      "https://mliaedu.toubkalit.com/verify-certificate/28-4849f83c-de56-4927-9783-2c053949d27f-128363"
   },
 
   {
-    title: "Certification Professionnelle en Traitement du langage naturel (NLP) en Python",
+    title:
+      "Certification Professionnelle en Traitement du langage naturel (NLP) en Python",
     issuer: "MLIAEdu — Plateforme de Certification Professionnelle",
     issueDate: "2025-11",
     skills: [
@@ -48,7 +51,9 @@ export const certifications: Certification[] = [
       "Score obtenu : 95%",
       "Progression des labs : 100%",
       "Certification délivrée le 14 novembre 2025"
-    ]
+    ],
+    credentialUrl:
+      "https://mliaedu.toubkalit.com/verify-certificate/36-4849f83c-de56-4927-9783-2c053949d27f-744865"
   },
 
   {
